@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="親">
+        <div>イベントで戻された値={parentNumber}</div>
+
+        <template for:each={array} for:item="num" >
+            <span key={num} class="slds-m-horizontal_medium">
+                <c-child-component child-number={num} onmsg={handleEvent}></c-child-component>
+            </span>
+        </template>
+
+    </lightning-card>
+</template>

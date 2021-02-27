@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="商談リスト">
+        <lightning-datatable
+                key-field="id"
+                data={records.data}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+        </lightning-datatable>
+
+        <section role="dialog" tabindex="-1" class={modalClass}>
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon size="large" class="slds-modal__close" icon-name="utility:close" variant="bare-inverse" onclick={onCloseModal}></lightning-button-icon>
+                    <h2 class="slds-text-heading_medium slds-hyphenate">商談の更新</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input type="text" label="商談名" data-field="name" value={selectRecord.Name}></lightning-input>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input type="date" label="完了予定日" data-field="closeDate" value={selectRecord.CloseDate}></lightning-input>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input type="number" label="金額" data-field="amount" value={selectRecord.Amount} formatter="currency"></lightning-input>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="キャンセル" onclick={onCloseModal}></lightning-button>
+                    <lightning-button label="保存" variant="brand" onclick={onSave} class="slds-m-left_small"></lightning-button>
+                </footer>
+            </div>
+            <lightning-spinner class={spinnerClass} variant="brand" size="large" alternative-text="Loading" ></lightning-spinner>
+            <c-error-toast errors={error} friendly-message="保存に失敗しました"></c-error-toast>
+        </section>
+        <div class={backDropClass}></div>
+    </lightning-card>
+</template>

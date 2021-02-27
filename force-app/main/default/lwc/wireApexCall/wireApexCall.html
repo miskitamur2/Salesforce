@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="取引先一覧" icon-name="custom:custom63">
+        <div class="slds-grid slds-gutters slds-m-around_small">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-input type="text" label="絞り込み" value={inputName} onchange={handleChange} ></lightning-input>
+            </div>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={accounts}
+                columns={columns}
+                hide-checkbox-column="true"
+                show-row-number-column="true">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

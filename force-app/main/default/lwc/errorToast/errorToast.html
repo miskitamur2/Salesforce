@@ -1,0 +1,39 @@
+<template>
+  <template if:true={isOpen}>
+      <div class="toast-error-container">
+          <div class="slds-notify_container">
+              <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+                  <span class="slds-assistive-text">error</span>
+                  <lightning-icon icon-name="utility:error" variant="inverse" size="small" class="slds-m-right_small slds-no-flex slds-align-top"></lightning-icon>
+                  <div class="error-content slds-notify__content">
+                      <h2 class="slds-text-heading_small">{friendlyMessage}</h2>
+                      <template if:true={errorMessages.length}>
+                          <ul class="slds-list_dotted slds-p-top_small">
+                              <li for:each={errorMessages} for:item="message" key={message}>{message}</li>
+                          </ul>
+                      </template>
+                      <div class="slds-p-vertical_x-small">
+                          <div class="slds-form-element">
+                              <div class="slds-form-element__control">
+                                  <div class="slds-checkbox">
+                                      <input type="checkbox" name="options" id="checkbox-view-details" value="true" checked={viewDetails} onchange={handleCheckboxChange}/>
+                                      <label class="slds-checkbox__label" for="checkbox-view-details" >
+                                          <span class="slds-checkbox_faux"></span>
+                                          <span class="slds-form-element__label">詳細を表示</span>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <template if:true={viewDetails}>
+                          <pre class="error-details slds-box slds-box_x-small slds-theme_default">{errorDetails}</pre>
+                      </template>
+                  </div>
+                  <div class="slds-notify__close">
+                      <lightning-button-icon icon-name="utility:close"  alternative-text="Close" variant="bare-inverse" size="large" title="Close" onclick={close}></lightning-button-icon>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </template>
+</template>

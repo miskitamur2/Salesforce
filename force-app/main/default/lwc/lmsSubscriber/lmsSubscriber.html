@@ -1,0 +1,13 @@
+<template>
+    <lightning-card icon-name="standard:contact" title="取引先責任者の詳細">
+        <template if:true={recordId} >
+            <lightning-record-form
+                record-id={recordId}
+                object-api-name="Contact"
+                layout-type="Full"
+                columns="4"
+                mode="readonly">
+            </lightning-record-form>
+        </template>
+    </lightning-card>
+</template>

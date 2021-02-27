@@ -1,0 +1,20 @@
+<template>
+    <lightning-card icon-name="standard:contact" title="取引先責任者の一覧">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr>
+                    <th>取引先責任者名</th>
+                    <th>メールアドレス</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={contacts.data} for:item="rec">
+                    <tr key={rec.Id}>
+                        <td><a data-contact-id={rec.Id} onclick={handleSelect}>{rec.Name}</a></td>
+                        <td>{rec.Email}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

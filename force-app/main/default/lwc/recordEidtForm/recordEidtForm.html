@@ -1,0 +1,21 @@
+<template>
+    <lightning-card icon-name="standard:case" title="ケースフォーム">
+        <lightning-record-edit-form object-api-name="Case">
+            <lightning-messages></lightning-messages>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="6" padding="horizontal-small">
+                    <lightning-input-field field-name="Subject"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="horizontal-small">
+                    <lightning-input-field field-name="Status"></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="horizontal-small">
+                    <lightning-input-field field-name="ContactId"></lightning-input-field>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="保存" type="submit"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
