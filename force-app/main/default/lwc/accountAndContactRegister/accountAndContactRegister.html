@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="取引先＆取引先責任者登録フォーム" icon-name="utility:ad_set">
+        <div class="slds-m-around_medium">
+                <h1>取引先</h1>
+                    <div class="slds-grid slds-gutters">
+                        <lightning-input label="Id" disabled value={accountId}></lightning-input>
+                        <div class="slds-col">
+                            <lightning-input label="Name" onchange={onChangeAccountName}></lightning-input>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-input label="AccountKana" onchange={onChangeAccountNameKana}></lightning-input>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-input label="AccountCode" onchange={onChangeAccountCode}></lightning-input>
+                        </div>
+                    </div>
+                <h1>取引先責任者</h1>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-input label="LastName" onchange={onChangeLastName} class="slds-m-bottom_x-small"></lightning-input>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-input label="FirstName" onchange={onChangeFirstName}></lightning-input>
+                        </div>
+                    </div>
+            <lightning-button label="登録" variant="brand" type="button" onclick={handleCreate}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
