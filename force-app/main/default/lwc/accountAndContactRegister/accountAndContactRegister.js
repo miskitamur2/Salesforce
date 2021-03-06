@@ -1,4 +1,5 @@
 import { createRecord } from 'lightning/uiRecordApi';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { api, LightningElement } from 'lwc';
 export default class AccountAndContactRegister extends LightningElement {
     accountId;
