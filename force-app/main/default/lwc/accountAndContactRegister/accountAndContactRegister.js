@@ -60,7 +60,7 @@ export default class AccountAndContactRegister extends LightningElement {
             .catch(error => {
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'Error creating record',
+                        title: 'Error creating Account record',
                         message: error.body.message,
                         variant: 'error',
                     }),
@@ -80,7 +80,7 @@ export default class AccountAndContactRegister extends LightningElement {
             .catch(error => {
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'Error creating record',
+                        title: 'Error creating Contact record',
                         message: error.body.message,
                         variant: 'error',
                     }),
