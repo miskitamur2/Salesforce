@@ -1,0 +1,20 @@
+<apex:page controller="SampleAccountEditController" action="{!doInit}"
+lightningStylesheets="true">
+<apex:form >
+<apex:pageBlock title="取引先情報">
+<apex:pageBlockButtons >
+<apex:commandButton value="カスタム保存" action="{!doCustomSave}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection columns="3">
+<apex:inputField value="{!acc.Name}"/>
+<apex:inputField value="{!acc.Phone}"/>
+<apex:inputField value="{!acc.Type}"/>
+</apex:pageBlockSection>
+<apex:pageBlockTable value="{!acc.Opportunities}" var="opp">
+<apex:column value="{!opp.Name}"/>
+<apex:column ><apex:inputfield value="{!opp.Amount}"/></apex:column>
+<apex:column ><apex:inputfield value="{!opp.StageName}"/></apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

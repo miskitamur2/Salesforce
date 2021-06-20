@@ -1,0 +1,13 @@
+<apex:page standardController="Account" lightningStylesheets="true">
+<apex:form >
+<apex:commandButton value="コマンドボタン保存" action="{!save}" />
+<apex:pageBlock title="取引先情報">
+<apex:pageBlockButtons >
+<apex:commandButton value="ブロックボタン保存" action="{!save}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection >
+<apex:inputField value="{!account.Name}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

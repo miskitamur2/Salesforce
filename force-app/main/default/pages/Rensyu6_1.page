@@ -1,0 +1,14 @@
+<apex:page standardController="Case" lightningStylesheets="true">
+<apex:form >
+    <apex:pageBlock title="ケース">
+        <apex:pageBlockButtons >
+        <apex:commandButton value="保存" action="{!Save}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="3">
+        <apex:inputField value="{!case.Subject}"/>
+        <apex:inputField value="{!case.Description}"/>
+        <apex:inputField value="{!case.Status}"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+</apex:form>
+</apex:page>
